@@ -1,0 +1,2 @@
+# Animator
+Animation utility class
