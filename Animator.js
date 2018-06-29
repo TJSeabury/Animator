@@ -1,9 +1,14 @@
-/*
+/**
  * TODO: Fix bug in easings with extra arg.
  * TODO: Merge Animator update and render loop from Physics.js class.
  * TODO: Create plug-and-play animations for the most common effects.
  */
 
+/**
+ * © Copyright 2018, Tyler Seabury, All Rights reserved.
+ * @author Tyler Seabury, tylerseabury@gmail.com
+ * @authorURL https://github.com/TJSeabury/
+ */
 class Animator
 {
     constructor()
