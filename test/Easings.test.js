@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { expect } from '@jest/globals';
 import Easings from './../build/Easings';
 

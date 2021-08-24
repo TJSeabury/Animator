@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { expect } from '@jest/globals';
 import Animator from './../build/Animator';
 

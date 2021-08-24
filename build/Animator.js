@@ -64,7 +64,7 @@ export function fadeOut(element, time, f = x => x) {
         }
     });
 }
-export function fadeInOut(element, time, f = x => x) {
+export function fadeInOut(element, f = x => x) {
     let pos = relativePositionToViewport(element);
     let r = f(Math.abs(clamp(pos)));
     element.style.setProperty('filter', 'opacity(' + String(1 - r) + ')');

@@ -1,3 +1,6 @@
+const HTML = document.documentElement;
+const windowWidth = () => HTML.clientWidth || document.body.clientWidth || window.innerWidth;
+const windowHeight = () => window.innerHeight || HTML.clientHeight;
 /**
  * Returns a number whose value is limited to the given range.
  *
@@ -93,7 +96,7 @@ export function relativePositionToViewport(element) {
         return;
     }
     let rect = element.getBoundingClientRect();
-    let center = (((rect.top + (rect.height / 2)) / html.wh) - 0.5) * 2;
+    let center = (((rect.top + (rect.height / 2)) / windowHeight()) - 0.5) * 2;
     return center;
 }
 export function relativeSizeToViewport(element) {
@@ -101,6 +104,6 @@ export function relativeSizeToViewport(element) {
         return;
     }
     let rect = element.getBoundingClientRect();
-    let ratio = html.wh / rect.height;
+    let ratio = windowHeight() / rect.height;
     return ratio;
 }

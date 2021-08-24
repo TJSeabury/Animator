@@ -82,7 +82,7 @@ export function fadeOut( element :HTMLElement, time :number, f :(x:number)=>numb
     });
 }
 
-export function fadeInOut( element :HTMLElement, time :number, f :(x:number)=>number = x => x )
+export function fadeInOut( element :HTMLElement, f :(x:number)=>number = x => x )
 {
     let pos = relativePositionToViewport( element );
     let r = f( Math.abs( clamp( pos ) ) );
