@@ -82,15 +82,15 @@ export function fadeOut( element :HTMLElement, time :number, f :(x:number)=>numb
         duration: time,
         easing: f,
         draw: t => {
-            element.style.setProperty( 'opacity', 1 - t );
+            element.style.setProperty( 'opacity', String(1 - t) );
         }
     });
 }
 
-export function fadeInOut( element :HTMLElement, time :number, f :(x:number)=>number = x => x )
+export function fadeInOut( element :HTMLElement, f :(x:number)=>number = x => x )
 {
     let pos = relativePositionToViewport( element );
     let r = f( Math.abs( clamp( pos ) ) );
-    element.style.setProperty( 'filter', 'opacity(' + (1 - r) + ')' );
+    element.style.setProperty( 'filter', 'opacity(' + String(1 - r) + ')' );
     return r;
 }

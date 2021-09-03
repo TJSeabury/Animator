@@ -6,41 +6,44 @@
  */
 export default class Easings {
 
-    static quadIn = ( timeIndex :number ) :number => {
-        return timeIndex**2;
-    };
-
-    static circIn = ( timeIndex: number ) :number => {
-        return 1 - Math.sin( Math.acos( timeIndex ) );
-    };
-
-    static quadOut( timeIndex :number ) {
-        return ( this.makeEaseOut( ( timeIndex: number ) :number => timeIndex**2 ) )( timeIndex );
+    static quadIn( t :number ):number {
+        return ( ( timeIndex :number ):number => timeIndex**2 )( t );
     }
 
-    static circOut = this.makeEaseOut( ( timeIndex :number ) :number => {
-        return 1 - Math.sin( Math.acos( timeIndex ) );
-    } );
+    static circIn( t :number):number {
+        return ( ( timeIndex: number ):number =>
+        1 - Math.sin( Math.acos( timeIndex ) ) )( t );
+    }
 
-    static quadInOut = this.makeEaseInOut( ( timeIndex:number ) :number => {
-        return timeIndex**2;
-    } );
+    static quadOut( timeIndex :number ):number {
+        return ( this.makeEaseOut( ( timeIndex: number ) => timeIndex**2 ) )( timeIndex );
+    }
 
-    static circInOut = this.makeEaseInOut( ( timeIndex :number ) :number => {
-        return 1 - Math.sin( Math.acos( timeIndex ) );
-    } );
+    static circOut( t :number ):number {
+        return ( this.makeEaseOut( ( timeIndex :number ) => 
+        1 - Math.sin( Math.acos( timeIndex ) ) ) )( t );
+    }
 
-    static linear = ( timeIndex :number ) :number => {
-        return timeIndex;
-    };
+    static quadInOut( t :number ):number { 
+        return ( this.makeEaseInOut( ( timeIndex:number ) => timeIndex**2 ) )( t );
+    }
 
-    static makeEaseOut( timing :( t :number ) => number ) :( t :number ) => number {
+    static circInOut( t :number ):number { 
+        return ( this.makeEaseInOut( ( timeIndex :number ) =>
+        1 - Math.sin( Math.acos( timeIndex ) ) ) )( t );
+    }
+
+    static linear( t :number ):number {
+        return ( ( timeIndex :number ) :number => timeIndex )( t );
+    }
+
+    static makeEaseOut( timing :(t:number)=>number ) :(t:number) =>number {
         return function( timeIndex :number ) {
             return 1 - timing( timeIndex ) ;
         };
     }
 
-    static makeEaseInOut( timing :( t :number ) => number ) :( t :number ) => number {
+    static makeEaseInOut( timing :(t:number)=>number) :(t:number)=>number {
         return function( timeIndex ) {
             if ( timeIndex < 0.5 )
             {

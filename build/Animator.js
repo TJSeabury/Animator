@@ -60,6 +60,7 @@ export function fadeOut(element, time, f = x => x) {
         duration: time,
         easing: f,
         draw: t => {
+<<<<<<< HEAD
             element.style.setProperty('opacity', 1 - t);
         }
     });
@@ -68,5 +69,15 @@ export function fadeInOut(element, time, f = x => x) {
     let pos = relativePositionToViewport(element);
     let r = f(Math.abs(clamp(pos)));
     element.style.setProperty('filter', 'opacity(' + (1 - r) + ')');
+=======
+            element.style.setProperty('opacity', String(1 - t));
+        }
+    });
+}
+export function fadeInOut(element, f = x => x) {
+    let pos = relativePositionToViewport(element);
+    let r = f(Math.abs(clamp(pos)));
+    element.style.setProperty('filter', 'opacity(' + String(1 - r) + ')');
+>>>>>>> 80ab54f081b5f3ab551d0ee6916da4149d516877
     return r;
 }

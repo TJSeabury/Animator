@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+const HTML = document.documentElement;
+const windowWidth = () => HTML.clientWidth || document.body.clientWidth || window.innerWidth;
+const windowHeight = () => window.innerHeight || HTML.clientHeight;
+>>>>>>> 80ab54f081b5f3ab551d0ee6916da4149d516877
 /**
  * Returns a number whose value is limited to the given range.
  *
@@ -93,7 +99,11 @@ export function relativePositionToViewport(element) {
         return;
     }
     let rect = element.getBoundingClientRect();
+<<<<<<< HEAD
     let center = (((rect.top + (rect.height / 2)) / html.wh) - 0.5) * 2;
+=======
+    let center = (((rect.top + (rect.height / 2)) / windowHeight()) - 0.5) * 2;
+>>>>>>> 80ab54f081b5f3ab551d0ee6916da4149d516877
     return center;
 }
 export function relativeSizeToViewport(element) {
@@ -101,6 +111,10 @@ export function relativeSizeToViewport(element) {
         return;
     }
     let rect = element.getBoundingClientRect();
+<<<<<<< HEAD
     let ratio = html.wh / rect.height;
+=======
+    let ratio = windowHeight() / rect.height;
+>>>>>>> 80ab54f081b5f3ab551d0ee6916da4149d516877
     return ratio;
 }
