@@ -1,0 +1,33 @@
+{
+  "name": "animator",
+  "version": "1.2.0",
+  "description": "An animation class.",
+  "main": "Animator.js",
+  "scripts": {
+    "test": "jest",
+    "testing": "jest --watch",
+    "build": "npx tsc",
+    "building": "npx tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TJSeabury/Animator.git"
+  },
+  "keywords": [
+    "animation",
+    "animate"
+  ],
+  "author": "Tyler Seabury",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TJSeabury/Animator/issues"
+  },
+  "homepage": "https://github.com/TJSeabury/Animator#readme",
+  "dependencies": {
+    "jest": "^27.0.6"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.15.0",
+    "typescript": "^4.4.0-beta"
+  }
+}
